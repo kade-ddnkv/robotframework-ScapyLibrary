@@ -74,10 +74,10 @@ class LayersWrapper(object):
     def _init_layers(self):
         for protocol in scapylib.conf.layers:
             protocolName = protocol.__name__
-            if protocol._name is None:
+            if protocolName is None:
                 doc = ''
             else:
-                doc = protocol._name + '\n\n'
+                doc = protocolName + '\n\n'
             for field in protocol.fields_desc:
                 if hasattr(field, 'default'):
                     try:
